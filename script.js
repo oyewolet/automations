@@ -2,19 +2,7 @@
 function fetchBlynkTemperature() {
   fetch("https://blynk.cloud/external/api/get?token=wUchuR6qCNFKyUae7vtCj8kozCKa5HVW&V10")
     .then((response) => response.json())
-    .then((data) => {
-      const temp = Array.isArray(data) ? data[0] : data;
-      const gauge = document.getElementById("gauge");
-      if (gauge) {
-        gauge.style.setProperty("--temp", temp);
-        gauge.setAttribute("data-temp", temp);
-      }
-      const tempText = document.getElementById("temperatureText");
-      if (tempText) {
-        tempText.textContent = `${temp}°C (Blynk)`;
-      }
-    })
-    .catch(console.error);
+  // ...existing code...
     .then((data) => {
       const temp = Array.isArray(data) ? data[0] : data;
       const gauge = document.getElementById("gauge");
